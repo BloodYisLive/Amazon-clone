@@ -4,12 +4,15 @@ import styled from "styled-components";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import RoomIcon from "@material-ui/icons/Room";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <Container>
       <HeaderLogo>
-        <img src={"https://i.imgur.com/7I9Was5.png"}></img>
+        <Link to='/'>
+          <img src={"https://i.imgur.com/7I9Was5.png"}></img>
+        </Link>
       </HeaderLogo>
       <HeaderOptionAddress>
         <RoomIcon className='location-icon' style={{ fontSize: 20 }} />
@@ -47,9 +50,13 @@ const Header = () => {
           <OptionLineTwo>& Orders</OptionLineTwo>
         </HeaderOption2>
       </HeaderNavItems>
-      <ShoppingCartIcon className='cart-icon' style={{ fontSize: 40 }} />
-      <CartCount>5</CartCount>
-      <HeaderOptionCart></HeaderOptionCart>
+
+      <HeaderOptionCart>
+        <Link to='/cart'>
+          <ShoppingCartIcon className='cart-icon' style={{ fontSize: 40 }} />
+          <CartCount>5</CartCount>
+        </Link>
+      </HeaderOptionCart>
     </Container>
   );
 };
@@ -128,7 +135,13 @@ const HeaderOption = styled.div`
 const HeaderOption2 = styled.div`
   padding: 10px 9px 10px 25px;
 `;
-const HeaderOptionCart = styled.div``;
+const HeaderOptionCart = styled.div`
+  display: flex;
+  a {
+    display: flex;
+    text-decoration: none;
+  }
+`;
 const CartCount = styled.div`
   color: white;
   margin-right: 17px;
