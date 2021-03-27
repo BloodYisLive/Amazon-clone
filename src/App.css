@@ -3,3 +3,12 @@
   padding: 0px;
   box-sizing: border-box;
 }
+.MuiSvgIcon-root {
+  color: black;
+}
+.cart-icon {
+  color: white;
+}
+.location-icon {
+  color: white;
+}

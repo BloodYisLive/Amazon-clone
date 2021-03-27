@@ -3,8 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-// import RoomIcon from "@material-ui/icons/Room";
-import black from "@material-ui/core/colors/black";
+import RoomIcon from "@material-ui/icons/Room";
 
 const Header = () => {
   return (
@@ -13,33 +12,42 @@ const Header = () => {
         <img src={"https://i.imgur.com/7I9Was5.png"}></img>
       </HeaderLogo>
       <HeaderOptionAddress>
-        <OptionLineOne>Hello</OptionLineOne>
-        <OptionLineTwo>
-          {/* <RoomIcon /> */}
-          Select your address
-        </OptionLineTwo>
+        <RoomIcon className='location-icon' style={{ fontSize: 20 }} />
+
+        <HeaderOption>
+          <OptionLineOne>Hello</OptionLineOne>
+          <OptionLineTwo>Select your address</OptionLineTwo>
+        </HeaderOption>
       </HeaderOptionAddress>
 
       <HeaderSearch>
         <HeaderSearchInput text='text' />
 
         <HeaderSearchIconContainer>
-          <SearchIcon />
+          <SearchIcon className='search-icon' />
         </HeaderSearchIconContainer>
       </HeaderSearch>
-
+      <IndiaFlagContainer>
+        <Iflag>
+          <img
+            src={
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/800px-Flag_of_India.svg.png"
+            }
+          ></img>
+        </Iflag>
+      </IndiaFlagContainer>
       <HeaderNavItems>
-        <HeaderOption>
+        <HeaderOption2>
           <OptionLineOne>Hello, Sign in</OptionLineOne>
           <OptionLineTwo>Accounts & Lists</OptionLineTwo>
-        </HeaderOption>
+        </HeaderOption2>
 
-        <HeaderOption>
+        <HeaderOption2>
           <OptionLineOne>Return</OptionLineOne>
           <OptionLineTwo>& Orders</OptionLineTwo>
-        </HeaderOption>
+        </HeaderOption2>
       </HeaderNavItems>
-      <ShoppingCartIcon style={{ color: black }} />
+      <ShoppingCartIcon className='cart-icon' style={{ fontSize: 40 }} />
       <CartCount>5</CartCount>
       <HeaderOptionCart></HeaderOptionCart>
     </Container>
@@ -64,12 +72,17 @@ const HeaderLogo = styled.div`
   }
 `;
 const HeaderOptionAddress = styled.div`
-  padding: 10px 9px 10px 30px;
+  display: flex;
+  padding: 10px 25px 10px 25px;
+  align-items: center;
 `;
 const OptionLineOne = styled.div`
+  font-size: 12px;
   color: white;
+  font-weight: 400;
 `;
 const OptionLineTwo = styled.div`
+  font-size: 14px;
   color: white;
   font-weight: 700;
 `;
@@ -78,25 +91,55 @@ const HeaderSearch = styled.div`
   display: flex;
   flex-grow: 1;
   height: 40px;
+  border-radius: 5px;
+  :focus-within {
+    box-shadow: 0 0 0 3px #f90;
+  }
 `;
 const HeaderSearchInput = styled.input`
   width: 100%;
+  border-radius: 4px 0px 0px 4px;
+  border-style: none;
+  font-size: 15px;
+
+  :focus {
+    outline: none;
+  }
 `;
 const HeaderSearchIconContainer = styled.div`
   background-color: #febd69;
   width: 45px;
-  //   color: black;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0px 4px 4px 0px;
+  cursor: pointer;
+
+  :hover {
+    background-color: #d1913d;
+  }
 `;
 const HeaderNavItems = styled.div`
   display: flex;
 `;
 const HeaderOption = styled.div`
-  padding: 10px 9px 10px 9px;
+  padding: 10px 9px 10px 0px;
+`;
+const HeaderOption2 = styled.div`
+  padding: 10px 9px 10px 25px;
 `;
 const HeaderOptionCart = styled.div``;
 const CartCount = styled.div`
   color: white;
+  margin-right: 17px;
+  font-size: 20px;
+  color: orange;
+`;
+const IndiaFlagContainer = styled.div``;
+const Iflag = styled.div`
+  margin-left: 25px;
+  img {
+    width: 20px;
+    height: 15px;
+  }
 `;
