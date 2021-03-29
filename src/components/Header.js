@@ -72,6 +72,9 @@ const Container = styled.div`
 `;
 
 const HeaderLogo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   img {
     width: 97px;
     margin-left: 17px;
