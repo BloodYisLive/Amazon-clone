@@ -1,13 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-const Products = () => {
+const Products = (props) => {
   return (
     <Container>
-      <Image src='https://m.media-amazon.com/images/I/61b3brw1JvL._AC_UY218_.jpg' />
-      <Title>Intel Celeron G3930 BX80677G3930 Processor</Title>
-      <Ratings>⭐⭐⭐⭐⭐</Ratings>
-      <Price>₹ 49,526.00</Price>
+      <Image src={props.image} />
+      <Title>{props.title}</Title>
+      <Ratings>
+        {Array(props.rating)
+          .fill()
+          .map((rating) => (
+            <p>⭐</p>
+          ))}
+      </Ratings>
+      <Price>{props.price}</Price>
       <AddToCartButton>Add to Cart</AddToCartButton>
     </Container>
   );
@@ -24,6 +30,7 @@ const Container = styled.div`
   margin: 10px;
   max-height: 400px;
   flex-direction: column;
+  flex-wrap: wrap;
 `;
 const Title = styled.span`
   font-weight: 400;
@@ -39,8 +46,14 @@ const Price = styled.span`
   font-weight: 400;
   font-size: 14px;
   color: #b12704;
+
+  :before {
+    content: "₹ ";
+  }
 `;
-const Ratings = styled.div``;
+const Ratings = styled.div`
+  display: flex;
+`;
 const Image = styled.img`
   display: block;
   margin-left: auto;
