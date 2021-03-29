@@ -157,5 +157,6 @@ const Iflag = styled.div`
   img {
     width: 20px;
     height: 15px;
+    cursor: pointer;
   }
 `;
