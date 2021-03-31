@@ -1,19 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-const Products = (props) => {
+const Products = ({ title, price, rating, image, id }) => {
   return (
     <Container>
-      <Image src={props.image} />
-      <Title>{props.title}</Title>
+      <Image src={image} />
+      <Title>{title}</Title>
       <Ratings>
-        {Array(props.rating)
+        {Array(rating)
           .fill()
           .map((rating) => (
             <p>⭐</p>
           ))}
       </Ratings>
-      <Price>{props.price}</Price>
+      <Price>{price}</Price>
       <AddToCartButton>Add to Cart</AddToCartButton>
     </Container>
   );

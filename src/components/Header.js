@@ -75,16 +75,26 @@ const HeaderLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 17px;
+  padding: 5px 2px 5px 0;
   img {
     width: 97px;
-    margin-left: 17px;
     margin-top: 10px;
+  }
+  :hover {
+    border: 1px solid white;
   }
 `;
 const HeaderOptionAddress = styled.div`
   display: flex;
-  padding: 10px 25px 10px 25px;
+  padding: 5px 2px 5px 0;
+  margin-right: 2px;
+  margin-left: 1px;
   align-items: center;
+  cursor: pointer;
+  :hover {
+    border: 1px solid white;
+  }
 `;
 const OptionLineOne = styled.div`
   font-size: 12px;
@@ -111,6 +121,7 @@ const HeaderSearchInput = styled.input`
   border-radius: 4px 0px 0px 4px;
   border-style: none;
   font-size: 15px;
+  margin-left: 3px;
 
   :focus {
     outline: none;
@@ -124,6 +135,7 @@ const HeaderSearchIconContainer = styled.div`
   align-items: center;
   border-radius: 0px 4px 4px 0px;
   cursor: pointer;
+  margin-right: 3px;
 
   :hover {
     background-color: #d1913d;
@@ -131,9 +143,14 @@ const HeaderSearchIconContainer = styled.div`
 `;
 const HeaderNavItems = styled.div`
   display: flex;
+  cursor: pointer;
+  :hover {
+    border: 1px solid white;
+  }
 `;
 const HeaderOption = styled.div`
-  padding: 10px 9px 10px 0px;
+  padding: 0 9px;
+  margin: 5px 2px 5px 0;
 `;
 const HeaderOption2 = styled.div`
   padding: 10px 9px 10px 25px;
@@ -144,19 +161,26 @@ const HeaderOptionCart = styled.div`
     display: flex;
     text-decoration: none;
   }
+  :hover {
+    border: 1px solid white;
+  }
 `;
 const CartCount = styled.div`
   color: white;
   margin-right: 17px;
   font-size: 20px;
-  color: orange;
+  color: #f08804;
 `;
 const IndiaFlagContainer = styled.div``;
 const Iflag = styled.div`
-  margin-left: 25px;
+  margin-left: 2px;
+  padding: 10px 12px 10px 12px;
   img {
     width: 20px;
     height: 15px;
     cursor: pointer;
+  }
+  :hover {
+    border: 1px solid white;
   }
 `;
